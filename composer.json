@@ -1,0 +1,34 @@
+{
+    "name": "akademi/flarum-ext-akademiform",
+    "description": "akademi kodlar",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.2.0",
+        "akademi/flarum-ext-akademiform": "dev-master"
+}
+    ,
+    "autoload": {
+        "psr-4": {
+            "Akademi\\Akademiform\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "AkademiForm",
+                "category": "feature",
+                "icon": {
+                    "name": "far fa-smile-beam",
+                    "backgroundColor": "#fdca47",
+                    "color": "#664500"
+            }
+        }
+       
+    }
+}
+  
+
+   
