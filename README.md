@@ -23,5 +23,5 @@ php flarum cache:clear
 ## Links
 
 - [Packagist](https://packagist.org/packages/akademi/flarum-ext-akademiform)
-- [GitHub](https://github.com/akademi/flarum-ext-akademiform)
+- [GitHub](https://github.com/Cengizhan00/AkademiForm)
 - [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
