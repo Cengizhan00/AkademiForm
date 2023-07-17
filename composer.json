@@ -1,6 +1,7 @@
 {
     "name": "akademi/flarum-ext-akademiform",
     "description": "akademi kodlar",
+    "homepage": "https://github.com/Cengizhan00/AkademiForm",
     "keywords": [
         "flarum"
     ],
