@@ -7,8 +7,8 @@
     "type": "flarum-extension",
     "license": "MIT",
     "require": {
-        "flarum/core": "^1.2.0",
-        "akademi/flarum-ext-akademiform": "dev-master"
+        "flarum/core": "^1.2.0"
+
 }
     ,
     "autoload": {
