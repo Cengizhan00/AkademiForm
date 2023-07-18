@@ -1,16 +1,28 @@
 <?php
 
-
-namespace Akademi\Akademiform;
-
+use Flarum\Api\Controller\ListDiscussionsController;
+use Flarum\Api\Serializer\DiscussionSerializer;
 use Flarum\Extend;
+use Flarum\User\AssertPermissionTrait;
+use Flarum\User\User;
 
 return [
+    (new Extend\ApiController(ListDiscussionsController::class))
+        ->prepareDataForSerialization(function ($controller, &$data, User $actor, $request) {
+            if ($request->getAttribute('routeName') === 'my-discussions') {
+                $actor->assertRegistered();
+
+                // Kullanıcının kendi tartışmalarını filtreleyin
+                $data = $data->where('user_id', $actor->id);
+            }
+        }),
+
     (new Extend\Frontend('forum'))
-        ->js(__DIR__.'/js/dist/forum.js')
-        ->css(__DIR__.'/less/forum.less'),
-    (new Extend\Frontend('admin'))
-        ->js(__DIR__.'/js/dist/admin.js')
-        ->css(__DIR__.'/less/admin.less'),
-    new Extend\Locales(__DIR__.'/locale'),
+        ->route('/my-discussions', 'my-discussions')
+        ->content(function ($view) {
+            $view->component = 'my-discussions';
+        }),
+
+    (new Extend\Routes('api'))
+        ->get('/my-discussions', 'my-discussions', ListDiscussionsController::class),
 ];
